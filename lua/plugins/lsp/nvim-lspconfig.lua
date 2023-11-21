@@ -60,7 +60,7 @@ return {
         server_opts = server_opts == true and {} or server_opts
         if server_opts.settings then
           handlers[server] = function()
-            require('lspconfig')[server].setup { settings = server_opts.settings }
+            require('lspconfig')[server].setup(server_opts)
           end
         end
       end
