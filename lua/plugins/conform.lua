@@ -26,7 +26,7 @@ return {
       javascript = { 'prettier' },
       typescript = { 'prettier' },
       ['*'] = { 'codespell' },
-      ['_'] = { 'trim_whitespace' },
+      ['_'] = { 'trim_whitespace', 'trim_newlines' },
     },
     format = {
       timeout_ms = 3000,
