@@ -10,10 +10,30 @@ return {
     end,
   },
   {
+    'neovim/nvim-lspconfig',
+    opts = {
+      servers = {
+        puppet = {
+          settings = {
+            formatOnType = true,
+          },
+        },
+      },
+    },
+  },
+  {
     'mfussenegger/nvim-lint',
     opts = {
       linters_by_ft = {
-        puppet = { 'puppet_lint' },
+        puppet = { 'puppet-lint' },
+      },
+    },
+  },
+  {
+    'stevearc/conform.nvim',
+    opts = {
+      formatters_by_ft = {
+        puppet = { 'puppet-lint' },
       },
     },
   },
