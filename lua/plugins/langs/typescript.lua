@@ -19,8 +19,18 @@ return {
     opts = {
       -- make sure mason installs the server
       servers = {
-        ---@type lspconfig.options.tsserver
         tsserver = {
+          on_attach = function(client, bufnr)
+            vim.keymap.set('n', '<leader>co', function()
+              vim.lsp.buf.code_action {
+                apply = true,
+                context = {
+                  only = { 'source.organizeImports.ts' },
+                  diagnostics = {},
+                },
+              }
+            end, { desc = 'Organize Imports' })
+          end,
           settings = {
             typescript = {
               format = {
@@ -41,21 +51,6 @@ return {
             },
           },
         },
-      },
-    },
-    setup = {
-      tsserver = {
-        on_attach = function(client, bufnr)
-          vim.keymap.set('n', '<leader>co', function()
-            vim.lsp.buf.code_action {
-              apply = true,
-              context = {
-                only = { 'source.organizeImports.ts' },
-                diagnostics = {},
-              },
-            }
-          end, { desc = 'Organize Imports' })
-        end,
       },
     },
   },

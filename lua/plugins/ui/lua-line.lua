@@ -30,6 +30,7 @@ return {
         lualine_a = { 'mode' },
         lualine_b = { 'branch' },
         lualine_c = {
+          { 'filename' },
           {
             'diagnostics',
             symbols = {
@@ -60,11 +61,6 @@ return {
             function() return "  " .. require("dap").status() end,
             cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = ui.fg("Debug"),
-          },
-          {
-            require('lazy.status').updates,
-            cond = require('lazy.status').has_updates,
-            color = ui.fg 'Special',
           },
           {
             'diff',
