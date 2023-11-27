@@ -38,7 +38,6 @@ return {
       servers = {
         gopls = {
           on_attach = function(client, bufnr)
-            print 'Hello from gopls'
             if not client.server_capabilities.semanticTokensProvider then
               local semantic = client.config.capabilities.textDocument.semanticTokens
               client.server_capabilities.semanticTokensProvider = {

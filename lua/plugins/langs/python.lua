@@ -39,7 +39,6 @@ return {
         pyright = {},
         ruff_lsp = {
           on_attach = function(client, bufnr)
-            print 'hello from ruff lsp'
             client.server_capabilities.hoverProvider = false
           end,
         },
