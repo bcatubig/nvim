@@ -4,6 +4,7 @@ return {
   dependencies = {
     'williamboman/mason.nvim',
   },
+  event = { 'BufWritePre' },
   cmd = 'ConformInfo',
   keys = {
     {
