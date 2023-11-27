@@ -19,7 +19,6 @@ return {
     dependencies = {
       'onsails/lspkind.nvim',
       'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lua',
       {
@@ -45,6 +44,11 @@ return {
         completion = {
           completeopt = 'menu,menuone,noinsert',
         },
+        snippet = {
+          expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+          end,
+        },
         formatting = {
           fields = { 'abbr', 'kind', 'menu' },
           format = lspkind.cmp_format {
@@ -64,11 +68,10 @@ return {
           ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
         },
         sources = {
+          { name = 'path' },
           { name = 'nvim_lsp' },
           { name = 'nvim_lua' },
           { name = 'luasnip' },
-          { name = 'path' },
-          { name = 'buffer' },
         },
       }
     end,
@@ -93,7 +96,25 @@ return {
       lsp_zero.extend_lspconfig()
 
       lsp_zero.on_attach(function(client, bufnr)
-        lsp_zero.default_keymaps { buffer = bufnr, preserve_mappings = false }
+        local function add_key(key, func, desc)
+          desc = 'LSP: ' .. desc
+          local opts = { buffer = bufnr, remap = false, desc = desc }
+          vim.keymap.set('n', key, func, opts)
+        end
+
+        add_key('gd', vim.lsp.buf.definition, 'Goto Definition')
+        add_key('K', vim.lsp.buf.hover, 'Docs')
+        add_key('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
+        add_key('<leader>xd', vim.diagnostic.open_float, 'Diagnostics')
+        add_key('[d', vim.diagnostic.goto_next, 'Next Diagnostic')
+        add_key(']d', vim.diagnostic.goto_prev, 'Prev Diagnostic')
+        add_key('<leader>cr', vim.lsp.buf.references, 'References')
+        add_key('<leader>cR', vim.lsp.buf.rename, 'Rename')
+        vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, {
+          buffer = bufnr,
+          remap = false,
+          desc = 'LSP: Signature Help',
+        })
       end)
 
       local icons = require 'config.icons'
