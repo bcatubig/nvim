@@ -98,8 +98,8 @@ return {
       lsp_zero.on_attach(function(client, bufnr)
         local function add_key(key, func, desc)
           desc = 'LSP: ' .. desc
-          local opts = { buffer = bufnr, remap = false, desc = desc }
-          vim.keymap.set('n', key, func, opts)
+          local kmopts = { buffer = bufnr, noremap = false, desc = desc }
+          vim.keymap.set('n', key, func, kmopts)
         end
 
         add_key('gd', vim.lsp.buf.definition, 'Goto Definition')
@@ -108,11 +108,10 @@ return {
         add_key('<leader>xd', vim.diagnostic.open_float, 'Diagnostics')
         add_key('[d', vim.diagnostic.goto_next, 'Next Diagnostic')
         add_key(']d', vim.diagnostic.goto_prev, 'Prev Diagnostic')
-        add_key('<leader>cr', vim.lsp.buf.references, 'References')
-        add_key('<leader>cR', vim.lsp.buf.rename, 'Rename')
+        add_key('gr', vim.lsp.buf.references, 'References')
+        add_key('gR', vim.lsp.buf.rename, 'Rename')
         vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, {
           buffer = bufnr,
-          remap = false,
           desc = 'LSP: Signature Help',
         })
       end)
