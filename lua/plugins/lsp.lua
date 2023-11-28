@@ -106,8 +106,8 @@ return {
         add_key('K', vim.lsp.buf.hover, 'Docs')
         add_key('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
         add_key('<leader>xd', vim.diagnostic.open_float, 'Diagnostics')
-        add_key('[d', vim.diagnostic.goto_next, 'Next Diagnostic')
-        add_key(']d', vim.diagnostic.goto_prev, 'Prev Diagnostic')
+        add_key(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
+        add_key('[d', vim.diagnostic.goto_prev, 'Prev Diagnostic')
         add_key('gr', vim.lsp.buf.references, 'References')
         add_key('gR', vim.lsp.buf.rename, 'Rename')
         vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, {
