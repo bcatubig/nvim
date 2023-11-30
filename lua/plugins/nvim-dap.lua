@@ -9,7 +9,9 @@ return {
         { "<leader>du", function() require("dapui").toggle({}) end,  desc = "Dap UI" },
         { "<leader>de", function() require("dapui").eval() end,      desc = "Eval",  mode = { "n", "v" } },
       },
-      opts = {},
+      opts = {
+        types = true,
+      },
       config = function(_, opts)
         -- setup dap config by VsCode launch.json file
         -- require("dap.ext.vscode").load_launchjs()
