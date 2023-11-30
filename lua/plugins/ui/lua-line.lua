@@ -30,6 +30,7 @@ return {
         lualine_a = { 'mode' },
         lualine_b = { 'branch' },
         lualine_c = {
+          { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 1 } },
           { 'filename' },
           {
             'diagnostics',
@@ -41,7 +42,6 @@ return {
             },
           },
           { maximize_status },
-          { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 0 } },
         },
         lualine_x = {
           -- stylua: ignore
