@@ -30,7 +30,7 @@ return {
         lualine_a = { 'mode' },
         lualine_b = { 'branch' },
         lualine_c = {
-          { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 1 } },
+          { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 0.5 } },
           { 'filename' },
           {
             'diagnostics',
