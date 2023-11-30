@@ -28,7 +28,7 @@ return {
     'stevearc/conform.nvim',
     opts = {
       formatters_by_ft = {
-        go = { 'goimports' },
+        go = { 'goimports', 'gofumpt' },
       },
     },
   },
@@ -52,7 +52,6 @@ return {
           end,
           settings = {
             gopls = {
-              gofumpt = true,
               codelenses = {
                 gc_details = false,
                 generate = true,
@@ -79,8 +78,8 @@ return {
                 unusedwrite = true,
                 useany = true,
               },
-              usePlaceholders = true,
-              completeUnimported = true,
+              -- usePlaceholders = true,
+              -- completeUnimported = true,
               staticcheck = true,
               directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
               semanticTokens = true,
