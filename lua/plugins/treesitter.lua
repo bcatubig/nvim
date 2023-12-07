@@ -20,6 +20,7 @@ return {
         'lua',
         'luadoc',
         'luap',
+        'make',
         'markdown',
         'markdown_inline',
         'python',
