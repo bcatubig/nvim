@@ -45,10 +45,9 @@ require('lazy').setup({
   { import = 'plugins.themes' },
   { import = 'plugins.coding' },
   { import = 'plugins.editor' },
-  { import = 'plugins.lsp' },
-  { import = 'plugins.langs' },
   { import = 'plugins.ui' },
+  { import = 'plugins.debug' },
+  { import = 'plugins.langs' },
 }, opts)
 
-vim.cmd 'autocmd ColorScheme nordfox highlight Normal ctermbg=NONE guibg=NONE'
 vim.cmd 'colorscheme nordfox'

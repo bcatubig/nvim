@@ -1,51 +1,5 @@
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == 'table' then
-        vim.list_extend(opts.ensure_installed, {
-          'ninja',
-          'python',
-          'rst',
-          'toml',
-        })
-      end
-    end,
-  },
-  {
-    'williamboman/mason.nvim',
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == 'table' then
-        vim.list_extend(opts.ensure_installed, {
-          'ruff',
-        })
-      end
-    end,
-  },
-  -- {
-  --   'stevearc/conform.nvim',
-  --   opts = function(_, opts)
-  --     if type(opts.formatters_by_ft) == 'table' then
-  --       vim.tbl_deep_extend("force",opts.formatters_by_ft, {
-  --         python = { 'ruff_format' },
-  --       })
-  --     end
-  --   end,
-  -- },
-  {
-    'neovim/nvim-lspconfig',
-    opts = {
-      servers = {
-        pyright = {},
-        ruff_lsp = {
-          on_attach = function(client, bufnr)
-            client.server_capabilities.hoverProvider = false
-          end,
-        },
-      },
-    },
-  },
-  {
     'nvim-neotest/neotest',
     dependencies = {
       'nvim-neotest/neotest-python',

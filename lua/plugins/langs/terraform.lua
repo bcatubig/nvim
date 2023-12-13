@@ -1,24 +1,5 @@
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == 'table' then
-        vim.list_extend(opts.ensure_installed, {
-          'terraform',
-          'hcl',
-        })
-      end
-    end,
-  },
-  {
-    'neovim/nvim-lspconfig',
-    opts = {
-      servers = {
-        terraformls = {},
-      },
-    },
-  },
-  {
     'mfussenegger/nvim-lint',
     optional = true,
     opts = {
@@ -32,11 +13,7 @@ return {
     'stevearc/conform.nvim',
     optional = true,
     opts = {
-      formatters_by_ft = {
-        terraform = { 'terraform_fmt' },
-        tf = { 'terraform_fmt' },
-        ['terraform-vars'] = { 'terraform_fmt' },
-      },
+      formatters_by_ft = {},
     },
   },
 }

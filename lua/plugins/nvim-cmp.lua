@@ -1,105 +1,98 @@
 return {
+
   {
     'L3MON4D3/LuaSnip',
-    build = (not jit.os:find 'Windows') and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp" or nil,
     dependencies = {
       'rafamadriz/friendly-snippets',
       config = function()
-        require('luasnip.loaders.from_vscode').lazy_load()
+        require("luasnip.loaders.from_vscode").lazy_load()
       end,
     },
+    build = "make install_jsregexp",
     opts = {
       history = true,
-      delete_check_events = 'TextChanged',
+      delete_check_events = "TextChanged",
     },
-    -- stylua: ignore
     keys = {
       {
         "<tab>",
         function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
+          return require('luasnip').jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
         end,
-        expr = true, silent = true, mode = "i",
+        expr = true,
+        silent = true,
+        mode = "i",
       },
-      { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
+      { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
   {
     'hrsh7th/nvim-cmp',
     version = false,
-    event = { 'InsertEnter', 'CmdlineEnter' },
+    event = "InsertEnter",
     dependencies = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'saadparwaiz1/cmp_luasnip',
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "saadparwaiz1/cmp_luasnip",
+      'onsails/lspkind.nvim',
     },
     opts = function()
-      vim.api.nvim_set_hl(0, 'CmpGhostText', { link = 'Comment', default = true })
-      local lsp_zero = require 'lsp-zero'
-      local cmp = require 'cmp'
-      local defaults = require 'cmp.config.default'()
-      local cmp_action = lsp_zero.cmp_action()
-      local icons = require 'config.icons'
+      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 
-      return {
-        completion = {
-          completeopt = 'menu,menuone,noinsert',
-        },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
+      local cmp = require('cmp')
+      local lspkind = require('lspkind')
 
+      local M = {
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
           end,
         },
-        formatting = {
-          format = function(_, vim_item)
-            vim_item.kind = (icons.kinds[vim_item.kind] or '') .. vim_item.kind
-            return vim_item
-          end,
+        completion = {
+          completeopt = 'menu,menuone,noinsert'
         },
-        experimental = {
-          ghost_text = {
-            hl_group = 'CmpGhostText',
-          },
-        },
-        sorting = defaults.sorting,
-        mapping = cmp.mapping.preset.insert {
+        mapping = {
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-e>'] = cmp.mapping.abort(),
-          ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-          ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-d>'] = cmp.mapping.scroll_docs(4),
-          -- ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-          -- ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-          ['<CR>'] = cmp.mapping.confirm { select = true },
-          ['<S-CR>'] = cmp.mapping.confirm {
+          ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           },
-          ['<Tab>'] = cmp_action.luasnip_supertab(),
-          ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
+            if cmp.visible() then
+              local entry = cmp.get_selected_entry()
+              if not entry then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+              else
+                cmp.confirm()
+              end
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
         },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
         }, {
-          { name = 'buffer' },
+          { name = "buffer" }
         }),
+        formatting = {
+          format = lspkind.cmp_format()
+        },
       }
+
+      return M
     end,
     config = function(_, opts)
-      local lsp_zero = require 'lsp-zero'
-      lsp_zero.extend_cmp()
-      local cmp = require 'cmp'
-      cmp.setup(opts)
+      require('cmp').setup(opts)
     end,
-  },
+  }
 }

@@ -1,3 +1,6 @@
 return {
-  { 'Civitasv/cmake-tools.nvim' },
+  {
+    'Civitasv/cmake-tools.nvim',
+    lazy = true,
+  },
 }
