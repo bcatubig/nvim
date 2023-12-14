@@ -43,10 +43,6 @@ local opts = {
 require('lazy').setup({
   { import = 'plugins' },
   { import = 'plugins.themes' },
-  { import = 'plugins.coding' },
-  { import = 'plugins.editor' },
-  { import = 'plugins.ui' },
-  { import = 'plugins.debug' },
   { import = 'plugins.langs' },
 }, opts)
 
