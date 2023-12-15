@@ -5,44 +5,56 @@ return {
     dependencies = {
       'rafamadriz/friendly-snippets',
       config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
+        require('luasnip.loaders.from_vscode').lazy_load()
       end,
     },
-    build = "make install_jsregexp",
+    build = 'make install_jsregexp',
     opts = {
       history = true,
-      delete_check_events = "TextChanged",
+      delete_check_events = 'TextChanged',
     },
     keys = {
       {
-        "<tab>",
+        '<tab>',
         function()
-          return require('luasnip').jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
+          return require('luasnip').jumpable(1) and '<Plug>luasnip-jump-next' or '<tab>'
         end,
         expr = true,
         silent = true,
-        mode = "i",
+        mode = 'i',
       },
-      { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
-      { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+      {
+        '<tab>',
+        function()
+          require('luasnip').jump(1)
+        end,
+        mode = 's',
+      },
+      {
+        '<s-tab>',
+        function()
+          require('luasnip').jump(-1)
+        end,
+        mode = { 'i', 's' },
+      },
     },
   },
   {
     'hrsh7th/nvim-cmp',
     version = false,
-    event = "InsertEnter",
+    event = 'InsertEnter',
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'saadparwaiz1/cmp_luasnip',
       'onsails/lspkind.nvim',
     },
     opts = function()
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+      vim.api.nvim_set_hl(0, 'CmpGhostText', { link = 'Comment', default = true })
 
-      local cmp = require('cmp')
-      local lspkind = require('lspkind')
+      local cmp = require 'cmp'
+      local lspkind = require 'lspkind'
+      local luasnip = require 'luasnip'
 
       local M = {
         snippet = {
@@ -51,7 +63,7 @@ return {
           end,
         },
         completion = {
-          completeopt = 'menu,menuone,noinsert'
+          completeopt = 'menu,menuone,noinsert',
         },
         mapping = {
           ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -63,29 +75,33 @@ return {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           },
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
+          ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
-              local entry = cmp.get_selected_entry()
-              if not entry then
-                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-              else
-                cmp.confirm()
-              end
+              cmp.select_next_item()
+            elseif luasnip.expand_or_locally_jumpable() then
+              luasnip.expand_or_jump()
             else
               fallback()
             end
-          end, { "i", "s" }),
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
         },
-        sources = cmp.config.sources({
+
+        sources = cmp.config.sources {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
-        }, {
-          { name = "buffer" }
-        }),
+        },
         formatting = {
-          format = lspkind.cmp_format()
+          format = lspkind.cmp_format(),
         },
       }
 
@@ -94,5 +110,5 @@ return {
     config = function(_, opts)
       require('cmp').setup(opts)
     end,
-  }
+  },
 }
