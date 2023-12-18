@@ -10,8 +10,6 @@ return {
   },
   opts = {
     ensure_installed = {
-      'ansible-lint',
-      'buf',
       'codelldb',
       'delve',
       'debugpy',
@@ -19,16 +17,12 @@ return {
       'goimports',
       'gomodifytags',
       'gotests',
-      'hadolint',
       'iferr',
       'impl',
       'js-debug-adapter',
       'stylua',
       'shfmt',
-      'codespell',
       'prettier',
-      'ruff',
-      'write-good',
     },
   },
   config = function(_, opts)
