@@ -9,13 +9,16 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'ruff' },
-        puppet = { 'puppet-lint' },
+        python = { 'ruff_format' },
         go = { 'goimports', 'gofumpt' },
+        markdown = { 'prettier' },
+        javascript = { 'prettier' },
+        puppet = { 'puppet-lint' },
+        typescript = { 'prettier' },
         terraform = { 'terraform_fmt' },
         tf = { 'terraform_fmt' },
         ['terraform-vars'] = { 'terraform_fmt' },
-        ['*'] = { 'codespell', 'write-good' },
+        ['*'] = { 'codespell' },
         ['_'] = { 'trim_whitespace', 'trim_newlines' },
       },
       format = {
