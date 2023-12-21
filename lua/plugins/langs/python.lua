@@ -1,26 +1,19 @@
 return {
   {
-    'nvim-neotest/neotest',
-    dependencies = {
-      'nvim-neotest/neotest-python',
-    },
-    opts = {
-      adapters = {
-        ['neotest-python'] = {
-          runner = 'pytest',
-        },
-      },
-    },
-  },
-  {
     'mfussenegger/nvim-dap-python',
     dependencies = {
       'mfussenegger/nvim-dap',
-      'williamboman/mason.nvim',
     },
+    config = function()
+      local path = require('mason-registry').get_package('debugpy'):get_install_path()
+
+      local dap = require 'dap-python'
+      dap.setup(path .. '/venv/bin/python')
+      dap.test_runner = 'pytest'
+    end,
     keys = {
       {
-        '<leader>dPt',
+        '<leader>dpt',
         function()
           require('dap-python').test_method()
         end,
@@ -28,7 +21,7 @@ return {
         ft = 'python',
       },
       {
-        '<leader>dPc',
+        '<leader>dpc',
         function()
           require('dap-python').test_class()
         end,
@@ -36,19 +29,6 @@ return {
         ft = 'python',
       },
     },
-    config = function()
-      local path = require('mason-registry').get_package('debugpy'):get_install_path()
-      require('dap-python').setup(path .. '/venv/bin/python')
-
-      require('dap-python').test_runner = 'pytest'
-      table.insert(require('dap').configurations.python, 1, {
-        type = 'python',
-        request = 'launch',
-        name = 'pytest',
-        module = 'pytest',
-        args = { 'tests' },
-      })
-    end,
   },
   {
     'linux-cultist/venv-selector.nvim',

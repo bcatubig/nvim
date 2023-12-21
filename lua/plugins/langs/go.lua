@@ -1,38 +1,29 @@
 return {
   {
-    'nvim-neotest/neotest',
+    'leoluz/nvim-dap-go',
     dependencies = {
-      'nvim-neotest/neotest-go',
+      'mfussenegger/nvim-dap',
     },
-    opts = {
-      adapters = {
-        ['neotest-go'] = {},
-      },
-    },
-  },
-  {
-    'mfussenegger/nvim-dap',
-    dependencies = {
-      'williamboman/mason.nvim',
+    config = function()
+      local dap = require 'dap-go'
+      dap.setup {}
+    end,
+    keys = {
       {
-        'leoluz/nvim-dap-go',
-        config = true,
-        keys = {
-          {
-            '<leader>dgt',
-            function()
-              require('dap-go').debug_test()
-            end,
-            desc = 'Debug Test',
-          },
-          {
-            '<leader>dgl',
-            function()
-              require('dap-go').debug_last_test()
-            end,
-            desc = 'Debug Last Test',
-          },
-        },
+        '<leader>dgt',
+        function()
+          require('dap-go').debug_test()
+        end,
+        desc = 'Debug test',
+        ft = 'go',
+      },
+      {
+        '<leader>dgl',
+        function()
+          require('dap-go').debug_last_test()
+        end,
+        desc = 'Debug last test',
+        ft = 'go',
       },
     },
   },
