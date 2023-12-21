@@ -39,7 +39,12 @@ return {
       'folke/neodev.nvim',
     },
     config = function()
-      require('neodev').setup()
+      require('neodev').setup {
+        library = {
+          plugins = { 'neotest' },
+          types = true,
+        },
+      }
       setup_gutter_icons()
 
       local servers = {
