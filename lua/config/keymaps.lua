@@ -9,12 +9,6 @@ keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Diagnostic keymaps
--- keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
--- keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
--- keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
--- keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-
 -- Pane Navigation
 keymap.set('n', '<C-h>', '<C-w>h', opts)
 keymap.set('n', '<C-j>', '<C-w>j', opts)
