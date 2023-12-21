@@ -12,31 +12,24 @@ return {
       history = true,
       delete_check_events = 'TextChanged',
     },
-    -- keys = {
-    --   {
-    --     '<tab>',
-    --     function()
-    --       return require('luasnip').jumpable(1) and '<Plug>luasnip-jump-next' or '<tab>'
-    --     end,
-    --     expr = true,
-    --     silent = true,
-    --     mode = 'i',
-    --   },
-    --   {
-    --     '<tab>',
-    --     function()
-    --       require('luasnip').jump(1)
-    --     end,
-    --     mode = 's',
-    --   },
-    --   {
-    --     '<s-tab>',
-    --     function()
-    --       require('luasnip').jump(-1)
-    --     end,
-    --     mode = { 'i', 's' },
-    --   },
-    -- },
+    config = function(_, opts)
+      local luasnip = require 'luasnip'
+      luasnip.setup(opts)
+
+      -- expand current item or jump to next line
+      vim.keymap.set({ 'i', 's' }, '<C-k>', function()
+        if luasnip.expand_or_jumpable() then
+          luasnip.expand_or_jump()
+        end
+      end, { silent = true })
+
+      -- jump backwards - move to previous item
+      vim.keymap.set({ 'i', 's' }, '<C-j>', function()
+        if luasnip.jumpable(-1) then
+          luasnip.jump(-1)
+        end
+      end, { silent = true })
+    end,
   },
   {
     'hrsh7th/nvim-cmp',
