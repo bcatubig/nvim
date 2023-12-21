@@ -118,6 +118,7 @@ return {
         terraformls = {},
         tsserver = {},
         yamlls = {},
+        zls = {},
       }
 
       local mason_lspconfig = require 'mason-lspconfig'
