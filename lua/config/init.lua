@@ -17,9 +17,7 @@ require 'config.keymaps'
 require 'config.augroups'
 
 local opts = {
-  defaults = {
-    lazy = false,
-  },
+  defaults = {},
   install = {
     colorscheme = { 'nordfox' },
   },

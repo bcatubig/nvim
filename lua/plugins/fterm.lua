@@ -1,6 +1,6 @@
 return {
   'numToStr/FTerm.nvim',
-  lazy = false,
+
   config = function()
     local fterm = require 'FTerm'
     fterm.setup {}
