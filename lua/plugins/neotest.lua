@@ -36,7 +36,7 @@ return {
       function()
         require('neotest').run.run { strategy = 'dap' }
       end,
-      desc = 'Run all tests',
+      desc = 'Debug nearest test',
     },
   },
 }
