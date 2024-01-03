@@ -43,10 +43,10 @@ local config = function()
   end, { desc = '[/] Fuzzily search in current buffer' })
 
   -- vim.keymap.set('n', '<leader>ff', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-  vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind files' })
+  vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
   -- vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
   vim.keymap.set('n', '<leader>fh', require('telescope.builtin').oldfiles, { desc = '[F]ind recently opened files' })
-  vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[Find] [G]rep' })
+  vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind [G]rep' })
   vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[F]ind [B]uffers' })
 end
 
