@@ -4,12 +4,21 @@ return {
   config = function()
     local harpoon = require 'harpoon'
     harpoon:setup()
-
-    vim.keymap.set('n', '<leader>a', function()
-      harpoon:list():append()
-    end, { silent = true })
-    vim.keymap.set('n', '<C-e>', function()
-      harpoon.ui:toggle_quick_menu(harpoon:list())
-    end, { silent = true })
   end,
+  keys = {
+    {
+      '<leader>a',
+      function()
+        require('harpoon'):list():append()
+      end,
+      desc = 'Harpoon: Mark File',
+    },
+    {
+      '<C-e>',
+      function()
+        require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())
+      end,
+      desc = 'Harpoon: Toggle Menu',
+    },
+  },
 }
