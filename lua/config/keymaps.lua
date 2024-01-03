@@ -33,3 +33,9 @@ if vim.fn.has 'macunix' then
   vim.api.nvim_set_keymap('n', '<C-/>', 'gcc', { noremap = false })
   vim.api.nvim_set_keymap('v', '<C-/>', 'gcc', { noremap = false })
 end
+
+-- Diagnostic keymaps
+keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+-- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
