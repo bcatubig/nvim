@@ -13,5 +13,6 @@ return {
         },
       },
     }
+    vim.cmd [[colorscheme nordfox]]
   end,
 }

@@ -43,5 +43,3 @@ require('lazy').setup({
   { import = 'plugins.themes' },
   { import = 'plugins.langs' },
 }, opts)
-
-vim.cmd 'colorscheme nordfox'
