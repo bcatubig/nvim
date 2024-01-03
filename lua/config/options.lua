@@ -66,14 +66,4 @@ opt.timeoutlen = 300
 
 opt.undolevels = 10000
 opt.virtualedit = 'block'
--- opt.fillchars = {
---   foldopen = '',
---   foldclose = '',
---   -- fold = "⸱",
---   fold = ' ',
---   foldsep = ' ',
---   diff = '╱',
---   eob = ' ',
--- }
-
 vim.g.markdown_recommended_style = 0

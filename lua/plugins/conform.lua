@@ -9,7 +9,6 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'ruff_format' },
         go = { 'goimports', 'gofumpt' },
         markdown = { 'prettier' },
         javascript = { 'prettier' },
