@@ -1,5 +1,6 @@
 return {
   'mfussenegger/nvim-dap',
+  lazy = false,
   dependencies = {
     -- fancy UI for the debugger
     {

@@ -1,12 +1,21 @@
 return {
-
   'nvim-neotest/neotest',
+  lazy = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'antoinemadec/FixCursorHold.nvim',
     'nvim-treesitter/nvim-treesitter',
     'nvim-neotest/neotest-go',
     'nvim-neotest/neotest-python',
+    {
+      'folke/which-key.nvim',
+      optional = true,
+      opts = {
+        defaults = {
+          ['<leader>t'] = { name = '+test' },
+        },
+      },
+    },
   },
   config = function()
     require('neotest').setup {
