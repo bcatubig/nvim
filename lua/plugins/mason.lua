@@ -13,6 +13,7 @@ return {
         'gofumpt',
         'isort',
         'prettier',
+        'ruff',
         'stylua',
       },
     },

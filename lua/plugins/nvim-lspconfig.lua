@@ -129,6 +129,14 @@ return {
           }
         end,
       }
+
+      -- require('lspconfig').ruff_lsp.setup {
+      --   capabilities = capabilities,
+      --   on_attach = function(client, bufnr)
+      --     print 'RUFF'
+      --     client.server_capabilities.hoverProvider = false
+      --   end,
+      -- }
     end,
   },
 }
