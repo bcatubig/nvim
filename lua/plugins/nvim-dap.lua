@@ -1,3 +1,36 @@
+local setup_gutter_icons = function()
+  local icons = require 'config.icons'
+  vim.fn.sign_define('DiagnosticSignError', {
+    texthl = 'DiagnosticSignError',
+    text = icons.diagnostics.Error,
+    numhl = '',
+  })
+
+  vim.fn.sign_define('DiagnosticSignWarn', {
+    texthl = 'DiagnosticSignWarn',
+    text = icons.diagnostics.Warn,
+    numhl = '',
+  })
+
+  vim.fn.sign_define('DiagnosticSignHint', {
+    texthl = 'DiagnosticSignHint',
+    text = icons.diagnostics.Hint,
+    numhl = '',
+  })
+
+  vim.fn.sign_define('DiagnosticSignInfo', {
+    texthl = 'DiagnosticSignInfo',
+    text = icons.diagnostics.Info,
+    numhl = '',
+  })
+
+  vim.fn.sign_define('DapBreakpoint', { text = icons.dap.Breakpoint, texthl = 'DapBreakpoint' })
+  vim.fn.sign_define('DapBreakpointCondition', { text = icons.dap.DapBreakpointCondition, texthl = 'DapBreakpoint' })
+  vim.fn.sign_define('DapBreakpointRejected', { text = icons.dap.BreakpointRejected[0], texthl = 'DapBreakpoint' })
+  vim.fn.sign_define('DapLogPoint', { text = ' ', texthl = 'DapLogPoint' })
+  vim.fn.sign_define('DapStopped', { text = icons.dap.Stopped[0], texthl = 'DapStopped' })
+end
+
 return {
   'mfussenegger/nvim-dap',
   lazy = false,
@@ -14,6 +47,8 @@ return {
         types = true,
       },
       config = function(_, opts)
+        setup_gutter_icons()
+
         -- setup dap config by VsCode launch.json file
         -- require("dap.ext.vscode").load_launchjs()
         local dap = require 'dap'
