@@ -7,12 +7,19 @@ return {
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     opts = {
+      formatters = {
+        isort = {
+          prepend_args = { '--sl' },
+        },
+        injected = { options = { ignore_errors = true } },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'goimports', 'gofumpt' },
         markdown = { 'prettier' },
         javascript = { 'prettier' },
         puppet = { 'puppet-lint' },
+        python = { 'isort' },
         typescript = { 'prettier' },
         terraform = { 'terraform_fmt' },
         tf = { 'terraform_fmt' },
@@ -24,9 +31,6 @@ return {
         timeout_ms = 3000,
         async = false,
         quiet = false,
-      },
-      formatters = {
-        injected = { options = { ignore_errors = true } },
       },
       format_on_save = {
         timeout_ms = 500,

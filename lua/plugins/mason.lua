@@ -11,6 +11,7 @@ return {
         'codespell',
         'goimports',
         'gofumpt',
+        'isort',
         'prettier',
         'stylua',
       },
