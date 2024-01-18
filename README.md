@@ -38,6 +38,14 @@ git clone https://github.com/bcatubig/kickstart.nvim.git $env:USERPROFILE\AppDat
 ### Ubuntu Installation
 
 ```shell
+# Install from source
+cd /tmp && \
+  wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz && \
+  tar -xzf nvim-linux64.tar.gz -C /usr/local --strip-components=1
+```
+
+```shell
+# Install Packages
 sudo apt update && sudo apt -y install \
   cargo \
   python3 \
