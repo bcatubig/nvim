@@ -35,6 +35,27 @@ git clone https://github.com/bcatubig/kickstart.nvim.git %userprofile%\AppData\L
 git clone https://github.com/bcatubig/kickstart.nvim.git $env:USERPROFILE\AppData\Local\nvim\
 ```
 
+### Ubuntu Installation
+
+```shell
+sudo apt update && sudo apt -y install \
+  cargo \
+  python3 \
+  python3-venv \
+  golang \
+  npm \
+  nodejs \
+  ripgrep \
+  fd-find \
+  unzip
+```
+
+### Arch Linux Installation
+
+```shell
+yay -Syyu
+```
+
 ### Windows Installation
 
 Installation may require installing build tools, and updating the run command for `telescope-fzf-native`
