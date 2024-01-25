@@ -11,6 +11,7 @@ return {
       local servers = {
         autotools_ls = {},
         clangd = {},
+        cmake = {},
         cssls = {},
         dockerls = {},
         emmet_language_server = {},
