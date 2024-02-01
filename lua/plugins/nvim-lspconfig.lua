@@ -50,6 +50,7 @@ return {
             semanticTokens = true,
           },
         },
+        jsonls = {},
         lua_ls = {
           Lua = {
             workspace = {
@@ -72,6 +73,7 @@ return {
         ruff_lsp = {},
         taplo = {},
         terraformls = {},
+        tsserver = {},
         yamlls = {},
       }
 

@@ -20,6 +20,7 @@ return {
         go = { 'goimports', 'gofumpt' },
         markdown = { 'prettier' },
         javascript = { 'prettier' },
+        json = { 'prettier' },
         puppet = { 'puppet-lint' },
         python = { 'isort', 'ruff_format' },
         typescript = { 'prettier' },
