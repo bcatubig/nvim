@@ -14,7 +14,21 @@ return {
         cmake = {},
         cssls = {},
         dockerls = {},
-        emmet_language_server = {},
+        emmet_language_server = {
+          filetypes = {
+            'css',
+            'eruby',
+            'html',
+            'htmldjango',
+            'javascriptreact',
+            'less',
+            'pug',
+            'sass',
+            'scss',
+            'typescriptreact',
+            'template',
+          },
+        },
         gopls = {
           gopls = {
             codelenses = {
@@ -48,6 +62,12 @@ return {
             staticcheck = true,
             directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
             semanticTokens = true,
+          },
+        },
+        html = {
+          filetypes = {
+            'html',
+            'template',
           },
         },
         jsonls = {},
