@@ -91,6 +91,7 @@ return {
         pyright = {},
         puppet = {},
         ruff_lsp = {},
+        sqlls = {},
         taplo = {},
         terraformls = {},
         tsserver = {},
