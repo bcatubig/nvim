@@ -29,6 +29,7 @@ return {
             'template',
           },
         },
+        eslint = {},
         gopls = {
           gopls = {
             codelenses = {

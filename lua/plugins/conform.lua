@@ -11,6 +11,9 @@ return {
         isort = {
           prepend_args = { '--sl' },
         },
+        sqlfluff = {
+          args = { 'fix', '--force', '--dialect=postgres', '-' },
+        },
         injected = { options = { ignore_errors = true } },
       },
       formatters_by_ft = {
@@ -23,10 +26,14 @@ return {
         json = { 'prettier' },
         puppet = { 'puppet-lint' },
         python = { 'isort', 'ruff_format' },
+        sh = { 'shfmt' },
+        sql = { 'sqlfluff' },
+        toml = { 'taplo' },
         typescript = { 'prettier' },
         terraform = { 'terraform_fmt' },
         tf = { 'terraform_fmt' },
         ['terraform-vars'] = { 'terraform_fmt' },
+        yaml = { 'prettier' },
         ['*'] = { 'codespell' },
         ['_'] = { 'trim_whitespace', 'trim_newlines' },
       },
