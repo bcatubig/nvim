@@ -4,8 +4,7 @@ return {
     config = function()
       require('lint').linters_by_ft = {
         sql = { 'sqlfluff' },
-        -- javascript = { 'eslint' },
-        terraform = { 'tslint' },
+        terraform = { 'tflint' },
       }
 
       vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
