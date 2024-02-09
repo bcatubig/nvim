@@ -18,6 +18,8 @@ return {
         'sqlfluff',
         'sql-formatter',
         'stylua',
+        'tflint',
+        'tsserver',
       },
     },
   },

@@ -29,7 +29,6 @@ return {
             'template',
           },
         },
-        eslint = {},
         gopls = {
           gopls = {
             codelenses = {
@@ -97,7 +96,7 @@ return {
         terraformls = {
           single_file_support = true,
         },
-        tsserver = {},
+        -- tsserver = {},
         yamlls = {},
       }
 
