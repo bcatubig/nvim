@@ -34,8 +34,7 @@ return {
         tf = { 'terraform_fmt' },
         ['terraform-vars'] = { 'terraform_fmt' },
         yaml = { 'prettier' },
-        ['*'] = { 'codespell' },
-        ['_'] = { 'trim_whitespace', 'trim_newlines' },
+        ['*'] = { 'codespell', 'trim_whitespace', 'trim_newlines' },
       },
       format = {
         timeout_ms = 3000,
