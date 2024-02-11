@@ -96,7 +96,25 @@ return {
         terraformls = {
           single_file_support = true,
         },
-        yamlls = {},
+        yamlls = {
+          yaml = {
+            schemas = require('schemastore').yaml.schemas {
+              extra = {
+                {
+                  description = 'k8s schemas',
+                  fileMatch = { 'helm/*', 'k8s/*' },
+                  name = 'k8s-all.json',
+                  url = 'https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.29.1/all.json',
+                },
+              },
+              validate = { enable = true },
+            },
+            schemaStore = {
+              enable = false,
+              url = '',
+            },
+          },
+        },
       }
 
       require('neodev').setup {}
