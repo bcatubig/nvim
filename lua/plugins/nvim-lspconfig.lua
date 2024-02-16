@@ -98,21 +98,10 @@ return {
         },
         yamlls = {
           yaml = {
-            schemas = require('schemastore').yaml.schemas {
-              extra = {
-                {
-                  description = 'k8s schemas',
-                  fileMatch = { 'helm/*', 'k8s/*' },
-                  name = 'k8s-all.json',
-                  url = 'https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.29.1/all.json',
-                },
-              },
-              validate = { enable = true },
+            schemas = {
+              kubernetes = { 'k8s/*.yml' },
             },
-            schemaStore = {
-              enable = false,
-              url = '',
-            },
+            validate = { enable = true },
           },
         },
       }
