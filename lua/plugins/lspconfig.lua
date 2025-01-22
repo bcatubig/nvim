@@ -196,6 +196,7 @@ return {
             },
           },
         },
+        dockerls = {},
         html = {},
         cssls = {},
         tailwindcss = {},
@@ -238,6 +239,7 @@ return {
         'black',
         'prettier',
         'markdownlint',
+        'salt-lint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
