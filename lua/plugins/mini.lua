@@ -37,6 +37,7 @@ return {
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
       require('mini.starter').setup()
+      require('mini.bufremove').setup()
     end,
   },
 }
