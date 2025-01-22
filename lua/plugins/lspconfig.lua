@@ -240,6 +240,7 @@ return {
         'prettier',
         'markdownlint',
         'salt-lint',
+        'hadolint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
