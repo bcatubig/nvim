@@ -183,8 +183,15 @@ return {
             gopls = {
               gofumpt = true,
               usePlaceholders = true,
+              completeUnimported = true,
+              staticcheck = true,
+              directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
+              semanticTokens = true,
               analyses = {
+                nilness = true,
                 unusedparams = true,
+                unusedwrite = true,
+                useany = true,
               },
             },
           },
@@ -230,6 +237,7 @@ return {
         'isort',
         'black',
         'prettier',
+        'markdownlint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
