@@ -39,6 +39,8 @@ return {
         css = { 'prettier' },
         javascript = { 'prettier' },
         markdown = { 'prettier' },
+        yaml = { 'prettier' },
+        ['*'] = { 'trim_whitespace' },
       },
     },
   },
