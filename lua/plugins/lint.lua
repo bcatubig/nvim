@@ -9,6 +9,7 @@ return {
         markdown = { 'markdownlint' },
         sls = { 'saltlint' },
         dockerfile = { 'hadolint' },
+        terraform = { 'tflint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

@@ -216,6 +216,7 @@ return {
             },
           },
         },
+        terraformls = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -241,6 +242,7 @@ return {
         'markdownlint',
         'salt-lint',
         'hadolint',
+        'tflint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

@@ -36,6 +36,7 @@ return {
         'query',
         'yaml',
         'toml',
+        'terraform',
         'typescript',
         'xml',
         'vim',
