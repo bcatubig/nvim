@@ -7,5 +7,3 @@ require 'config.keymaps'
 require 'config.autocmds'
 require 'config.filetypes'
 require 'config.lazy'
-
-vim.cmd 'colorscheme onedark'
