@@ -1,0 +1,3 @@
+return {
+  'rjshkhr/shadow.nvim',
+}
