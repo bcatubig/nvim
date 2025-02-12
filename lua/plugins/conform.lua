@@ -32,6 +32,7 @@ return {
         }
       end,
       formatters_by_ft = {
+        bash = { 'shfmt' },
         lua = { 'stylua' },
         go = { 'goimports' },
         python = { 'isort', 'black' },
@@ -40,7 +41,7 @@ return {
         javascript = { 'prettier' },
         markdown = { 'prettier' },
         yaml = { 'prettier' },
-        ['*'] = { 'trim_whitespace' },
+        ['*'] = { 'trim_whitespace', 'trim_newlines' },
       },
     },
   },
