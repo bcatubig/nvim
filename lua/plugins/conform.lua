@@ -41,7 +41,7 @@ return {
         javascript = { 'prettier' },
         markdown = { 'prettier' },
         yaml = { 'prettier' },
-        ['*'] = { 'trim_whitespace', 'trim_newlines' },
+        ['_'] = { 'trim_whitespace', 'trim_newlines' },
       },
     },
   },
