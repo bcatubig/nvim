@@ -34,12 +34,15 @@ return {
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
       require('mini.starter').setup {
         header = 'Neovim',
       }
+
+      -- Bufremove
       require('mini.bufremove').setup()
+
+      -- Animatie
+      require('mini.animate').setup()
     end,
   },
 }
