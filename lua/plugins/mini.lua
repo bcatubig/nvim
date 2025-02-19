@@ -42,7 +42,7 @@ return {
       require('mini.bufremove').setup()
 
       -- Animatie
-      require('mini.animate').setup()
+      -- require('mini.animate').setup()
     end,
   },
 }
