@@ -43,6 +43,7 @@ return {
 
       -- Animatie
       -- require('mini.animate').setup()
+      -- require('mini.indentscope').setup()
     end,
   },
 }
