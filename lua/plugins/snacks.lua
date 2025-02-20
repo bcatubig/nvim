@@ -9,4 +9,20 @@ return {
     -- refer to the configuration section below
     indent = { enabled = true },
   },
+  keys = {
+    {
+      '<leader>lg',
+      function()
+        Snacks.lazygit()
+      end,
+      desc = 'Lazygit',
+    },
+    {
+      '<leader>bd',
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = 'Delete Buffer',
+    },
+  },
 }
