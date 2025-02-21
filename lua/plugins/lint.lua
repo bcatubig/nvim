@@ -11,6 +11,7 @@ return {
         dockerfile = { 'hadolint' },
         terraform = { 'tflint' },
         python = { 'ruff' },
+        ['ansible.yaml'] = { 'ansible-lint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
