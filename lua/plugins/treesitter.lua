@@ -23,6 +23,7 @@ return {
         'ini',
         'java',
         'javascript',
+        'jinja',
         'json',
         'make',
         'proto',
