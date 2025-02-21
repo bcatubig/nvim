@@ -35,7 +35,7 @@ return {
         bash = { 'shfmt' },
         lua = { 'stylua' },
         go = { 'goimports' },
-        python = { 'isort', 'black' },
+        python = { 'ruff_organize_imports', 'ruff_format' },
         html = { 'prettier' },
         css = { 'prettier' },
         javascript = { 'prettier' },
