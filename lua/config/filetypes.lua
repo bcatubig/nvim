@@ -3,7 +3,9 @@ vim.filetype.add {
     sls = 'sls.yaml',
   },
   pattern = {
+    ['.*.service'] = 'systemd',
     ['.*.j2'] = 'jinja',
+    ['.*/ansible/.*%.ya?ml'] = 'yaml.ansible',
     ['.*/defaults/.*%.ya?ml'] = 'yaml.ansible',
     ['.*/host_vars/.*%.ya?ml'] = 'yaml.ansible',
     ['.*/group_vars/.*%.ya?ml'] = 'yaml.ansible',
