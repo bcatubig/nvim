@@ -27,6 +27,7 @@ return {
         lua = { 'stylua' },
         go = { 'goimports' },
         python = { 'ruff_organize_imports', 'ruff_format' },
+        hcl = { 'hcl' },
         html = { 'prettier' },
         css = { 'prettier' },
         javascript = { 'prettier' },
