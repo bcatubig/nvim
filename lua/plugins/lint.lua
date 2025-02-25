@@ -10,7 +10,6 @@ return {
         sls = { 'saltlint' },
         dockerfile = { 'hadolint' },
         terraform = { 'tflint' },
-        python = { 'ruff' },
         ['ansible.yaml'] = { 'ansible-lint' },
       }
 

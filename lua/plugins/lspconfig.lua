@@ -109,7 +109,7 @@ return {
         tailwindcss = {},
         emmet_ls = {},
         -- pyright = {},
-        ruff = {},
+        -- ruff = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
