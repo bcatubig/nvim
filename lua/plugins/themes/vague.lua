@@ -1,5 +1,5 @@
-return -- Lazy
-{
+return {
   'vague2k/vague.nvim',
+  lazy = true,
   opts = {},
 }
