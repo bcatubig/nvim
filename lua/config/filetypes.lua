@@ -4,7 +4,7 @@ vim.filetype.add {
   },
   pattern = {
     ['.*.service'] = 'systemd',
-    ['.*.j2'] = 'jinja',
+    ['.*.ya?ml.j2'] = 'yaml.jinja',
     ['.*/ansible/.*%.ya?ml'] = 'yaml.ansible',
     ['.*/defaults/.*%.ya?ml'] = 'yaml.ansible',
     ['.*/host_vars/.*%.ya?ml'] = 'yaml.ansible',
@@ -16,5 +16,6 @@ vim.filetype.add {
     ['.*/roles/.*/handlers/.*%.ya?ml'] = 'yaml.ansible',
     ['.*/tasks/.*%.ya?ml'] = 'yaml.ansible',
     ['.*/molecule/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*.j2'] = 'jinja',
   },
 }
