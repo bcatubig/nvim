@@ -19,10 +19,11 @@ opt.timeoutlen = 300
 opt.splitright = true
 opt.splitbelow = true
 -- opt.list = true
---opt.listchars = { tab = ' ▎', trail = '·', nbsp = '␣' }
+opt.listchars = { tab = ' ▎', trail = '·', nbsp = '␣' }
 opt.inccommand = 'split'
 opt.cursorline = true
 opt.scrolloff = 10
+opt.swapfile = false
 
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
