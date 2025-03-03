@@ -1,5 +1,4 @@
-return -- lazy.nvim
-{
+return {
   'm4xshen/hardtime.nvim',
   event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   dependencies = { 'MunifTanjim/nui.nvim' },
@@ -39,6 +38,7 @@ return -- lazy.nvim
       'trouble',
       'VoltWindow',
       'undotree',
+      'harpoon*',
     },
   },
 }
