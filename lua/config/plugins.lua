@@ -289,6 +289,7 @@ now(function()
   })
 
   require("which-key").setup({
+    delay = 50,
     preset = "modern",
     spec = {
       { "<leader>c", group = "[C]ode", mode = { "n", "x" } },
