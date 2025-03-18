@@ -15,7 +15,8 @@ if not vim.loop.fs_stat(mini_path) then
   vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
-local map = function(mode, key, cmd, desc)
+local map = function(key, cmd, desc, mode)
+  mode = mode or "n"
   vim.keymap.set(mode, key, cmd, { noremap = true, silent = true, desc = desc })
 end
 
