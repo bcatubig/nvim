@@ -1,9 +1,12 @@
 local opt = vim.opt
 
 opt.tabstop = 2
+opt.softtabstop = 2
 opt.shiftwidth = 2
-opt.relativenumber = true
 opt.smartindent = true
+opt.expandtab = true
+opt.autoindent = true
+opt.relativenumber = true
 opt.laststatus = 3
 opt.timeoutlen = 300
 opt.updatetime = 250
@@ -19,5 +22,3 @@ opt.list = true
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.inccommand = "split"
 opt.confirm = true
-
-vim.bo.softtabstop = 2
