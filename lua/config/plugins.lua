@@ -198,7 +198,8 @@ later(function()
     formatters_by_ft = {
       lua = { "stylua" },
       go = { "goimports", "gofumpt" },
-      python = { "ruff" },
+      python = { "ruff_organize_imports", "ruff_format" },
+      ["_"] = { "trim_newlines", "trim_whitespace" },
     },
     format_on_save = {
       timeout_ms = 500,
