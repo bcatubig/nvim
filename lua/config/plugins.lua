@@ -54,45 +54,38 @@ now(function()
 end)
 
 -- mini plugin suite
--- stylua: ignore start
 now(function()
-	require("mini.basics").setup({
-		mappings = {
-			windows = true,
-			move_with_alt = true,
-		},
-	})
+  require("mini.basics").setup({
+    mappings = {
+      windows = true,
+      move_with_alt = true,
+    },
+  })
+  require("mini.starter").setup({})
+  require("mini.icons").setup()
 end)
 
-now(function ()
-	require('mini.starter').setup({
-		
-	})
-end)
+later(function()
+  require("mini.ai").setup({ n_lines = 500 })
+  require("mini.comment").setup()
+  require("mini.surround").setup()
+  require("mini.pairs").setup()
+  require("mini.move").setup()
+  require("mini.bufremove").setup()
+  require("mini.bracketed").setup()
+  require("mini.git").setup()
 
-now(function ()
-	require('mini.icons').setup()
+  require("mini.diff").setup({
+    view = {
+      style = "sign",
+      signs = {
+        add = "▎",
+        change = "▎",
+        delete = "",
+      },
+    },
+  })
 end)
-later(function() require("mini.ai").setup({ n_lines = 500 }) end)
-later(function() require("mini.comment").setup() end)
-later(function() require("mini.pick").setup() end)
-later(function() require("mini.surround").setup() end)
-later(function() require("mini.pairs").setup() end)
-later(function() require("mini.move").setup() end)
-later(function() require("mini.bufremove").setup() end)
-later(function() require("mini.bracketed").setup() end)
-later(function() require("mini.git").setup() end)
-later(function() require("mini.diff").setup({
-	view = {
-		style = 'sign',
-		signs = {
-			add = '▎',
-			change = '▎',
-			delete = '',
-		},
-	},
-}) end)
--- stylua: ignore end
 
 -- noice
 now(function()
@@ -106,14 +99,21 @@ now(function()
 
   require("noice").setup({
     lsp = {
+      signature = {
+        auto_open = { enabled = false },
+      },
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
       },
-      presets = {
-        command_palette = true,
-      },
+    },
+    presets = {
+      bottom_search = true, -- use a classic bottom cmdline for search
+      command_palette = false, -- position the cmdline and popupmenu together
+      long_message_to_split = true, -- long messages will be sent to a split
+      inc_rename = false, -- enables an input dialog for inc-rename.nvim
+      lsp_doc_border = true,
     },
   })
 end)
@@ -197,7 +197,8 @@ later(function()
   require("conform").setup({
     formatters_by_ft = {
       lua = { "stylua" },
-      go = { "goimport" },
+      go = { "goimports", "gofumpt" },
+      python = { "ruff" },
     },
     format_on_save = {
       timeout_ms = 500,
@@ -281,7 +282,6 @@ now(function()
   })
 
   require("which-key").setup({
-    delay = 0,
     preset = "modern",
     spec = {
       { "<leader>c", group = "[C]ode", mode = { "n", "x" } },
@@ -582,7 +582,6 @@ later(function()
 end)
 
 -- folke/todo-comments
--- TODO: test this
 later(function()
   add({ source = "folke/todo-comments.nvim" })
 
