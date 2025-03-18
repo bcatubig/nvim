@@ -166,6 +166,9 @@ later(function()
     ensure_installed = {
       "bash",
       "c",
+      "css",
+      "hcl",
+      "html",
       "go",
       "diff",
       "html",
@@ -175,6 +178,11 @@ later(function()
       "markdown_inline",
       "javascript",
       "jinja",
+      "jinja_inline",
+      "lua",
+      "make",
+      "sql",
+      "proto",
       "python",
       "query",
       "vim",
@@ -201,6 +209,14 @@ later(function()
       lua = { "stylua" },
       go = { "goimports", "gofumpt" },
       python = { "ruff_organize_imports", "ruff_format" },
+      yaml = { "prettier" },
+      json = { "prettier" },
+      markdown = { "prettier" },
+      javascript = { "prettier" },
+      html = { "prettier" },
+      css = { "prettier" },
+      toml = { "prettier" },
+      terraform = { "terrafor_fmt" },
       ["_"] = { "trim_newlines", "trim_whitespace" },
     },
     format_on_save = {
@@ -472,6 +488,10 @@ now(function()
     "impl",
     "stylua",
     "shfmt",
+    "prettier",
+    "tflint",
+    "vale",
+    "hadolint",
   })
 
   require("mason-tool-installer").setup({
@@ -643,6 +663,31 @@ now(function()
         for _, w in ipairs(tree_wins) do
           vim.api.nvim_win_close(w, true)
         end
+      end
+    end,
+  })
+end)
+
+later(function()
+  add({
+    source = "mfussenegger/nvim-lint",
+  })
+
+  local lint = require("lint")
+
+  lint.linters_by_ft = {
+    terraform = { "tflint" },
+    markdown = { "vale" },
+    text = { "vale" },
+    dockerfile = { "hadolint" },
+  }
+
+  local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+  vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+    group = lint_augroup,
+    callback = function()
+      if vim.opt_local.modifiable:get() then
+        lint.try_lint()
       end
     end,
   })
