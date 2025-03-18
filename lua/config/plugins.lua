@@ -420,6 +420,7 @@ now(function()
     tailwindcss = {},
     basedpyright = {},
     ruff = {},
+    ["ruff-lsp"] = {},
     terraformls = {},
   }
 
