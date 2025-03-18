@@ -182,6 +182,7 @@ later(function()
       "lua",
       "make",
       "sql",
+      "ini",
       "proto",
       "python",
       "query",
