@@ -19,3 +19,5 @@ opt.list = true
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.inccommand = "split"
 opt.confirm = true
+
+vim.bo.softtabstop = 2
