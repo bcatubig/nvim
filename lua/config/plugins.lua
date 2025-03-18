@@ -111,7 +111,7 @@ now(function()
     },
     presets = {
       bottom_search = true, -- use a classic bottom cmdline for search
-      command_palette = false, -- position the cmdline and popupmenu together
+      command_palette = true, -- position the cmdline and popupmenu together
       long_message_to_split = true, -- long messages will be sent to a split
       inc_rename = false, -- enables an input dialog for inc-rename.nvim
       lsp_doc_border = true,
@@ -196,6 +196,7 @@ later(function()
   })
 
   require("conform").setup({
+    notify_on_error = false,
     formatters_by_ft = {
       lua = { "stylua" },
       go = { "goimports", "gofumpt" },
@@ -207,6 +208,10 @@ later(function()
       lsp_format = "fallback",
     },
   })
+
+  map("<leader>f", function()
+    require("conform").format({ async = true, lsp_format = "fallback" })
+  end, "[F]ormat Buffer")
 end)
 
 -- telescope
