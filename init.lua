@@ -1,11 +1,7 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
-require 'config.opts'
-require 'config.keymaps'
-require 'config.autocmds'
-require 'config.filetypes'
-require 'config.lazy'
-
-vim.cmd 'colorscheme onedark'
+require("config")
