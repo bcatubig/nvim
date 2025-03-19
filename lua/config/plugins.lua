@@ -217,7 +217,7 @@ later(function()
       html = { "prettier" },
       css = { "prettier" },
       toml = { "prettier" },
-      terraform = { "terrafor_fmt" },
+      terraform = { "terraform_fmt" },
       ["*"] = { "trim_newlines", "trim_whitespace" },
     },
     format_on_save = {
