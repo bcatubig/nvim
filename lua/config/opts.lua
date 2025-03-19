@@ -3,23 +3,15 @@ local opt = vim.opt
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
-opt.smartindent = true
 opt.expandtab = true
 opt.autoindent = true
+
 opt.relativenumber = true
+
 opt.laststatus = 3
 opt.timeoutlen = 300
 opt.updatetime = 250
-opt.signcolumn = "yes"
-opt.splitright = true
-opt.splitbelow = true
-opt.cursorline = true
 opt.swapfile = false
-opt.showmode = false
-opt.breakindent = true
-opt.undofile = true
-opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.inccommand = "split"
 opt.confirm = true
 
