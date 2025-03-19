@@ -18,3 +18,6 @@ opt.confirm = true
 vim.schedule(function()
   opt.clipboard = "unnamedplus"
 end)
+
+-- disable inline dignostic messages
+vim.diagnostic.config({ virtual_text = false })
