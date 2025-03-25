@@ -207,6 +207,7 @@ later(function()
   require("conform").setup({
     notify_on_error = false,
     formatters_by_ft = {
+      astro = { "prettier" },
       lua = { "stylua" },
       go = { "goimports", "gofumpt" },
       python = { "ruff_organize_imports", "ruff_format" },
@@ -451,6 +452,7 @@ now(function()
       },
     },
     ansiblels = {},
+    astro = {},
     bashls = {},
     clangd = {},
     dockerls = {},
