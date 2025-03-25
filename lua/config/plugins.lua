@@ -726,3 +726,11 @@ later(function()
     end,
   })
 end)
+
+-- github-preview
+now(function()
+  add({
+    source = "OXY2DEV/markview.nvim",
+  })
+
+end)
