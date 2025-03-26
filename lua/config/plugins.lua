@@ -523,7 +523,6 @@ now(function()
     "stylua",
     "shfmt",
     "prettier",
-    "tflint",
     "vale",
     "hadolint",
   })
@@ -710,7 +709,6 @@ later(function()
   local lint = require("lint")
 
   lint.linters_by_ft = {
-    -- terraform = { "tflint" },
     markdown = { "vale" },
     text = { "vale" },
     dockerfile = { "hadolint" },
@@ -732,5 +730,4 @@ now(function()
   add({
     source = "OXY2DEV/markview.nvim",
   })
-
 end)
