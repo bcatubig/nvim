@@ -17,7 +17,6 @@ return {
   ["lazydev.nvim"] = "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c",
   ["lazygit.nvim"] = "b9eae3badab982e71abab96d3ee1d258f0c07961",
   ["lualine.nvim"] = "1517caa8fff05e4b4999857319d3b0609a7f57fa",
-  ["markview.nvim"] = "59d3baaac5b77aa3939f5a00acd335183e45930d",
   ["mason-lspconfig.nvim"] = "1a31f824b9cd5bc6f342fc29e9a53b60d74af245",
   ["mason-tool-installer.nvim"] = "98767d37f8e5255a5111fc1e3163232d4dc07bda",
   ["mason.nvim"] = "fc98833b6da5de5a9c5b1446ac541577059555be",
