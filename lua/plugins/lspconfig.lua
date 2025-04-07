@@ -187,7 +187,6 @@ now(function()
     "stylua",
     "shfmt",
     "prettier",
-    "vale",
     "hadolint",
   })
 
