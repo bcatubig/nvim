@@ -24,7 +24,7 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
 
       -- Useful status updates for LSP.
-      { "j-hui/fidget.nvim", opts = {} },
+      -- { "j-hui/fidget.nvim", opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       "saghen/blink.cmp",
@@ -139,6 +139,8 @@ return {
               completion = {
                 callSnippet = "Replace",
               },
+
+              telemetry = { enable = false },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
             },
