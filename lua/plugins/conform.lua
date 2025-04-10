@@ -1,11 +1,7 @@
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
-
-later(function()
-  add({
-    source = "stevearc/conform.nvim",
-  })
-
-  require("conform").setup({
+return {
+  "stevearc/conform.nvim",
+  event = { "BufWritePre" },
+  opts = {
     notify_on_error = false,
     formatters_by_ft = {
       astro = { "prettier" },
@@ -26,9 +22,15 @@ later(function()
       timeout_ms = 500,
       lsp_format = "fallback",
     },
-  })
-
-  vim.keymap.set("n", "<leader>f", function()
-    require("conform").format({ async = true, lsp_format = "fallback" })
-  end, { desc = "[F]ormat buffer" })
-end)
+  },
+  cmd = { "ConformInfo" },
+  keys = {
+    {
+      "<leader>f",
+      function()
+        require("conform").format({ async = true, lsp_format = "fallback" })
+      end,
+      desc = "[F]ormat buffer",
+    },
+  },
+}

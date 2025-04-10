@@ -14,6 +14,8 @@ opt.updatetime = 250
 opt.swapfile = false
 opt.inccommand = "split"
 opt.confirm = true
+opt.termguicolors = true
+opt.winborder = "rounded"
 
 vim.schedule(function()
   opt.clipboard = "unnamedplus"

@@ -1,15 +1,11 @@
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
-
-now(function()
-  add({
-    source = "folke/noice.nvim",
-    depends = {
-      "MunifTanjim/nui.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-  })
-
-  require("noice").setup({
+return {
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  dependencies = {
+    -- "MunifTanjim/nui.nvim",
+    { "pynappo/nui.nvim", branch = "support-winborder" },
+  },
+  opts = {
     lsp = {
       signature = {
         auto_open = { enabled = false },
@@ -17,15 +13,14 @@ now(function()
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
-        ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
       },
     },
     presets = {
       bottom_search = true, -- use a classic bottom cmdline for search
-      command_palette = true, -- position the cmdline and popupmenu together
+      command_palette = false, -- position the cmdline and popupmenu together
       long_message_to_split = true, -- long messages will be sent to a split
       inc_rename = false, -- enables an input dialog for inc-rename.nvim
-      lsp_doc_border = true,
+      lsp_doc_border = false,
     },
-  })
-end)
+  },
+}
