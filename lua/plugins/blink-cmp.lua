@@ -37,13 +37,9 @@ return {
     completion = {
       documentation = {
         auto_show = false,
-        window = {
-          border = "rounded",
-        },
+        border = nil,
       },
       menu = {
-        enabled = true,
-
         border = nil,
         winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
         winblend = 0,

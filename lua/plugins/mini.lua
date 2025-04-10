@@ -14,7 +14,7 @@ return {
     require("mini.surround").setup()
     require("mini.pairs").setup()
     require("mini.move").setup()
-    require("mini.bufremove").setup()
+    -- require("mini.bufremove").setup()
     require("mini.bracketed").setup()
     require("mini.git").setup()
 
