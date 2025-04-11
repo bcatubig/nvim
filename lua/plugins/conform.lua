@@ -24,13 +24,4 @@ return {
     },
   },
   cmd = { "ConformInfo" },
-  keys = {
-    {
-      "<leader>f",
-      function()
-        require("conform").format({ async = true, lsp_format = "fallback" })
-      end,
-      desc = "[F]ormat buffer",
-    },
-  },
 }

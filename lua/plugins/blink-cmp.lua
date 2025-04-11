@@ -37,15 +37,13 @@ return {
     completion = {
       documentation = {
         window = {
-          border = nil,
           winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
         },
         auto_show = false,
-        border = nil,
       },
       menu = {
-        border = nil,
-        scrollbar = false,
+        -- scrollbar = false,
+        border = "rounded",
         winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
         winblend = 0,
         min_width = 15,
