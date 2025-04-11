@@ -15,5 +15,6 @@ return {
     { "<leader>sC", "<cmd>FzfLua colorschemes<cr>", desc = "[S]earch [C]olorschemes" },
     { "<leader>sc", "<cmd>FzfLua commands<cr>", desc = "[S]earch [C]ommands" },
     { "<leader><leader>", "<cmd>FzfLua buffers<cr>", desc = "[S]earch Buffers" },
+    { "<leader>/", "<cmd>FzfLua grep_curbuf<cr>", desc = "Search current buffer" },
   },
 }
