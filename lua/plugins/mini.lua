@@ -9,7 +9,9 @@ return {
         move_with_alt = true,
       },
     })
-    require("mini.starter").setup({})
+    require("mini.starter").setup({
+      header = "who dares wins",
+    })
     require("mini.ai").setup({ n_lines = 500 })
     require("mini.comment").setup()
     require("mini.surround").setup()
