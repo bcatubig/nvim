@@ -164,7 +164,6 @@ return {
           },
         },
         templ = {},
-        html = {},
         htmx = {},
         cssls = {},
         tailwindcss = {},
