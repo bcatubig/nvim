@@ -2,8 +2,8 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   dependencies = {
-    -- "MunifTanjim/nui.nvim",
-    { "pynappo/nui.nvim", branch = "support-winborder" },
+    "MunifTanjim/nui.nvim",
+    --{ "pynappo/nui.nvim", branch = "support-winborder" },
   },
   opts = {
     lsp = {
@@ -13,6 +13,7 @@ return {
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
       },
     },
     presets = {

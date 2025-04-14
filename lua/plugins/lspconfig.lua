@@ -129,7 +129,7 @@ return {
       })
 
       local original_capabilities = vim.lsp.protocol.make_client_capabilities()
-      local capabilities = vim.tbl_deep_extend("force", original_capabilities, require("blink.cmp").get_lsp_capabilities({}, false))
+      local capabilities = vim.tbl_deep_extend("force", original_capabilities, require("cmp_nvim_lsp").default_capabilities())
 
       local servers = {
         lua_ls = {
@@ -149,6 +149,7 @@ return {
         astro = {},
         bashls = {},
         clangd = {},
+        cssls = {},
         dockerls = {},
         emmet_ls = {},
         gopls = {
@@ -164,6 +165,7 @@ return {
           },
         },
         templ = {},
+        html = {},
         htmx = {},
         cssls = {},
         tailwindcss = {},
