@@ -9,9 +9,10 @@ return {
         move_with_alt = true,
       },
     })
-    require("mini.starter").setup({
-      header = "who dares wins",
-    })
+    -- require("mini.starter").setup({
+    --   header = "who dares wins",
+    --   query_updaters = "abcdefghijklmnopqrstuvwxyz0123456789_.",
+    -- })
     require("mini.ai").setup({ n_lines = 500 })
     require("mini.comment").setup()
     require("mini.surround").setup()
