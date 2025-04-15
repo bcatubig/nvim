@@ -15,7 +15,7 @@ return {
       { "williamboman/mason.nvim", opts = {} },
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
-      "saghen/blink.cmp",
+      "hrsh7th/nvim-cmp",
     },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
