@@ -28,11 +28,11 @@ return {
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map("rn", vim.lsp.buf.rename, "[R]e[n]ame")
+          man("gRn", vim.lsp.buf.rename, "[R]e[n]ame")
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map("ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
+          map("gca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 
           -- Find references for the word under your cursor.
           map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
