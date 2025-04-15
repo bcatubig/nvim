@@ -27,6 +27,9 @@ require("lazy").setup({
     { import = "plugins" },
   },
   install = { colorscheme = { "onedark" } },
+  ui = {
+    border = "rounded",
+  },
 })
 
 require("config.opts")
