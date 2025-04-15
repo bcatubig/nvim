@@ -3,6 +3,24 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     { "hide", "ivy" },
+    old_files = {
+      cwd_only = true,
+      stat_file = true,
+      include_current_session = true,
+    },
+    previewers = {
+      builtin = {
+        syntax_limit_b = 1024 * 100,
+      },
+    },
+    grep = {
+      rg_glob = true,
+      glob_flag = "--iglob",
+      glob_separator = "%s%-%-",
+    },
+    files = {
+      no_ignore = true,
+    },
   },
   keys = {
     { "<leader>sh", "<cmd>FzfLua helptags<cr>", desc = "[S]earch [H]elp" },
