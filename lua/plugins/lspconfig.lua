@@ -15,7 +15,8 @@ return {
       { "williamboman/mason.nvim", opts = {} },
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
-      "hrsh7th/nvim-cmp",
+      -- "hrsh7th/nvim-cmp",
+      "saghen/blink.cmp",
     },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -128,8 +129,10 @@ return {
         },
       })
 
-      local original_capabilities = vim.lsp.protocol.make_client_capabilities()
-      local capabilities = vim.tbl_deep_extend("force", original_capabilities, require("cmp_nvim_lsp").default_capabilities())
+      -- local original_capabilities = vim.lsp.protocol.make_client_capabilities()
+      -- local capabilities = vim.tbl_deep_extend("force", original_capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       local servers = {
         lua_ls = {
