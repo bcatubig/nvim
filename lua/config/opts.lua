@@ -23,3 +23,5 @@ end)
 
 -- disable inline dignostic messages
 vim.diagnostic.config({ virtual_text = false })
+
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
