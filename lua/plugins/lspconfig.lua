@@ -155,6 +155,7 @@ return {
         cssls = {},
         dockerls = {},
         emmet_ls = {},
+        ["gh-actions-language-server"] = {},
         gopls = {
           settings = {
             gopls = {
@@ -170,12 +171,12 @@ return {
         templ = {},
         html = {},
         htmx = {},
-        cssls = {},
         tailwindcss = {},
         basedpyright = {},
         ruff = {},
         ["ruff-lsp"] = {},
         terraformls = {},
+        yamlls = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
