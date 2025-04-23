@@ -6,16 +6,16 @@ return {
 
     fzf.setup({
       { "hide", "ivy" },
+      defaults = {
+        formatter = "path.dirname_first",
+      },
       oldfiles = {
         cwd_only = true,
         stat_file = true,
         include_current_session = true,
       },
       files = {
-        cwd_only = true,
-        stat_file = true,
-        include_current_session = true,
-        no_ignore = true,
+        cwd_prompt = false,
       },
       previewers = {
         builtin = {
