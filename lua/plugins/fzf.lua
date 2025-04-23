@@ -11,6 +11,12 @@ return {
         stat_file = true,
         include_current_session = true,
       },
+      files = {
+        cwd_only = true,
+        stat_file = true,
+        include_current_session = true,
+        no_ignore = true,
+      },
       previewers = {
         builtin = {
           syntax_limit_b = 1024 * 100,
@@ -20,9 +26,6 @@ return {
         rg_glob = true,
         glob_flag = "--iglob",
         glob_separator = "%s%-%-",
-      },
-      files = {
-        no_ignore = true,
       },
     })
   end,
