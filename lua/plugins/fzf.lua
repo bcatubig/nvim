@@ -5,7 +5,7 @@ return {
     local fzf = require("fzf-lua")
 
     fzf.setup({
-      { "hide", "ivy" },
+      { "hide" },
       defaults = {
         formatter = "path.dirname_first",
       },
