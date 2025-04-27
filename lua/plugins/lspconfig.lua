@@ -174,7 +174,6 @@ return {
         tailwindcss = {},
         basedpyright = {},
         ruff = {},
-        ["ruff-lsp"] = {},
         terraformls = {},
         yamlls = {},
       }
