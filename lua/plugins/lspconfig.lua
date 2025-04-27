@@ -175,6 +175,7 @@ return {
         basedpyright = {},
         ruff = {},
         terraformls = {},
+        ["typescript-language-server"] = {},
         yamlls = {},
       }
 
