@@ -26,14 +26,13 @@ vim.diagnostic.config({ virtual_text = false })
 
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
-opt.fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:"
--- opt.foldcolumn = "1"
+-- Folds
 opt.foldcolumn = "0"
+-- opt.foldcolumn = "1"
 opt.foldenable = true
+opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
--- opt.foldlevelstart = 1
-opt.foldmethod = "expr"
-opt.foldtext = ""
 opt.foldnestmax = 4
+opt.foldtext = ""

@@ -15,7 +15,6 @@ return {
       { "williamboman/mason.nvim", opts = {} },
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
-      -- "hrsh7th/nvim-cmp",
       "saghen/blink.cmp",
     },
     config = function()
