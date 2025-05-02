@@ -13,10 +13,10 @@ return {
       vim.cmd("colorscheme onedark")
     end,
   },
-  { "sainnhe/everforest" },
-  { "EdenEast/nightfox.nvim" },
-  { "folke/tokyonight.nvim" },
-  { "rebelot/kanagawa.nvim" },
-  { "nyoom-engineering/oxocarbon.nvim" },
-  { "bluz71/vim-moonfly-colors", name = "moonfly" },
+  { "sainnhe/everforest", priority = 1000 },
+  { "EdenEast/nightfox.nvim", priority = 1000 },
+  { "folke/tokyonight.nvim", priority = 1000 },
+  { "rebelot/kanagawa.nvim", priority = 1000 },
+  { "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", priority = 1000 },
 }
