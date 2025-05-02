@@ -2,7 +2,7 @@ return {
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000,
-    opts = function()
+    config = function()
       require("onedarkpro").setup({
         options = {
           cursorline = true,
@@ -10,7 +10,6 @@ return {
           highlight_inactive_windows = true,
         },
       })
-
       vim.cmd("colorscheme onedark")
     end,
   },
