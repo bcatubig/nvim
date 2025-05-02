@@ -176,6 +176,7 @@ return {
         terraformls = {},
         ["typescript-language-server"] = {},
         yamlls = {},
+        sqlls = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -189,6 +190,7 @@ return {
         "stylua",
         "shfmt",
         "prettier",
+        "sqlfluff",
       })
 
       require("mason-tool-installer").setup({

@@ -18,6 +18,7 @@ return {
       css = { "prettier" },
       toml = { "prettier" },
       terraform = { "terraform_fmt" },
+      sql = { "sqlfluff" },
       ["*"] = { "trim_newlines", "trim_whitespace" },
     },
     format_on_save = {
