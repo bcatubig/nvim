@@ -6,3 +6,6 @@ require("config.lazy")
 require("config.opts")
 require("config.keymaps")
 require("config.filetypes")
+
+-- Disable LSP Logging
+vim.lsp.set_log_level("off")
