@@ -193,6 +193,7 @@ return {
         "shfmt",
         "prettier",
         "sqlfluff",
+        "tflint",
       })
 
       require("mason-tool-installer").setup({
