@@ -15,5 +15,6 @@ return {
     require("mini.move").setup()
     require("mini.bufremove").setup()
     require("mini.bracketed").setup()
+    require("mini.jump").setup()
   end,
 }
